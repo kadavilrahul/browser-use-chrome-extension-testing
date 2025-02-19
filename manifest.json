@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Web Assistant",
+    "version": "1.0",
+    "description": "AI-powered web automation assistant",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "lib/jquery.min.js",
+                "utils/dom-utils.js",
+                "utils/action-utils.js",
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["utils/*", "lib/*"],
+        "matches": ["<all_urls>"]
+    }]
+}
