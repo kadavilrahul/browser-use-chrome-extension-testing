@@ -1,6 +1,6 @@
 export class LLMService {
     constructor() {
-        this.apiKey = "AIzaSyA5bfenANZwEDV5vfSWWaFWuX4cD2ejJSQ";
+        this.apiKey = "your-api-key";
         this.endpoint = "https://generativelanguage.googleapis.com/v1beta/models/";
         this.model = "gemini-2.0-flash-exp";
     }
